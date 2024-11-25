@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/src/styles/fonts/SourceSans3.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --primary: 213deg 94% 48%;
+    --primary-light: 213deg 88% 51%;
+    --primary-dark: 213deg 93% 43%;
+
+    --accent: 213deg 94% 48%;
+    --accent-light: 213deg 88% 51%;
+    --accent-dark: 213deg 93% 43%;
+
+    --default: 204deg 29% 97%;
+    --default-light: 210deg 23% 95%;
+    --default-border: 210deg 9% 87%;
+
+    --danger: 360deg 72% 49%;
+
+    --foreground: 210deg 24% 22%;
+    --foreground-100: 217deg 2% 40%;
+    --foreground-200: 217deg 3% 64%;
+
+    --background: 0deg 0% 100%;
+  }
+
+  :root[data-theme="dark"] {
+    --primary: 213deg 94% 48%;
+    --primary-light: 213deg 88% 51%;
+    --primary-dark: 213deg 93% 43%;
+
+    --accent: 213deg 94% 48%;
+    --accent-light: 213deg 88% 51%;
+    --accent-dark: 213deg 93% 43%;
+
+    --default: 215deg 17% 22%;
+    --default-light: 215deg 16% 25%;
+    --default-border: 215deg 15% 28%;
+
+    --danger: 359deg 73% 56%;
+
+    --foreground: 216deg 19% 85%;
+    --foreground-100: 216deg 17% 70%;
+    --foreground-200: 214deg 21% 66%;
+
+    --background: 212deg 19% 16%;
+  }
+
+  html {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 100%;
+    @apply text-foreground;
+  }
+
+  .input:focus {
+    outline: none !important;
+    outline-color: transparent;
+  }
+}
+
+@layer utilities {
+  .focusable {
+    @apply focus-visible:outline-none focus-visible:ring-1 ring-accent ring-offset-2 ring-offset-transparent;
+  }
+
+  div[data-focused="true"] {
+    @apply outline-none ring-1 ring-accent ring-offset-2 ring-offset-transparent;
+  }
+}
+
+.onyx-checkbox:hover .onyx-checkbox-icon-wrapper {
+  @apply border-accent shadow-accent;
+}
+
+@layer components {
+  .loader {
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
