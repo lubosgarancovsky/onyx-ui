@@ -25,7 +25,7 @@ export const DrawerTrigger: React.FC<{
 };
 
 interface DrawerContentProps {
-  children: React.ReactNode;
+  children: ((setIsOpen: React.Dispatch<React.SetStateAction<boolean>>) => React.ReactNode) | React.ReactNode;
   header?: React.ReactNode;
 }
 
@@ -62,7 +62,7 @@ export const DrawerContent: React.FC<DrawerContentProps> = ({
               </Button>
             </div>
 
-            {children}
+            {typeof children === "function" ? children(setIsOpen) : children}
           </motion.div>
         </motion.div>
       )}

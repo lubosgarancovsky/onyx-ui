@@ -35,19 +35,21 @@ export const Basic: Story = {
         </DialogTrigger>
         <DialogBody>
           <DialogContent className="flex flex-col gap-4">
-            <Input
-              type="email"
-              label="E-mail"
-              placeholder="Enter your e-mail"
-            />
-            <Input type="password" label="Password" />
-            <Input type="password" label="Repeat password" />
-            <Checkbox label="I agree with terms & conditions" />
+            {(setIsOpen) => <>
+              <Input
+                  type="email"
+                  label="E-mail"
+                  placeholder="Enter your e-mail"
+              />
+              <Input type="password" label="Password" />
+              <Input type="password" label="Repeat password" />
+              <Checkbox label="I agree with terms & conditions" />
 
-            <div className="flex justify-end gap-2">
-              <Button>Cancel</Button>
-              <Button color="primary">Submit</Button>
-            </div>
+              <div className="flex justify-end gap-2">
+                <Button onClick={() => setIsOpen(false)}>Cancel</Button>
+                <Button onClick={() => setIsOpen(false)} color="primary">Submit</Button>
+              </div>
+            </>}
           </DialogContent>
         </DialogBody>
       </>

@@ -180,7 +180,7 @@ function useTagInput(props: UseTagInputProps) {
     (tagId: string) => ({
       ...tagCloseButtonProps,
       onClick: () => removeItem(tagId),
-      className: cn("focusable hover:text-primary", tagCloseButtonProps?.className),
+      className: cn("focusable hover:text-accent", tagCloseButtonProps?.className),
     }),
     [tagCloseButtonProps]
   );

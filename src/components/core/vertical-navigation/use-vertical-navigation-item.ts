@@ -26,9 +26,9 @@ function useVerticalNavigationItem(props: UseVerticalNavigationItemProps) {
 
   const style = useMemo(() => {
     return cn(
-      "relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-md hover:bg-default-light",
+      "relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-md hover:bg-default",
       {
-        "bg-default-light before:content-[''] before:absolute before:top-0 before:-left-2 before:w-1 before:h-full before:bg-accent before:rounded-full":
+        "bg-default-light hover:bg-default-light before:content-[''] before:absolute before:top-0 before:-left-2 before:w-1 before:h-full before:bg-accent before:rounded-full":
           active && !primary,
       },
       {

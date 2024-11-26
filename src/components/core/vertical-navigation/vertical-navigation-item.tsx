@@ -4,7 +4,7 @@ import useVerticalNavigationItem, {
 } from "./use-vertical-navigation-item";
 
 export const VerticalNavigationDevider: React.FC = () => {
-  return <hr className="bg-default-100 my-1.5" />;
+  return <hr className="border-t border-default-border my-1.5" />;
 };
 
 const VerticalNavigationItem: React.FC<UseVerticalNavigationItemProps> = (

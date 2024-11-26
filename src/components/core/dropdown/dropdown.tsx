@@ -22,11 +22,11 @@ export const DropdownTrigger: React.FC<{
 };
 
 export const DropdownContent: React.FC<{
-  children: React.ReactNode;
+  children: ((setIsOpen: React.Dispatch<React.SetStateAction<boolean>>) => React.ReactNode) | React.ReactNode;
   className?: string;
   direction?: "left" | "right";
   label?: string;
-  actions?: React.ReactNode;
+  actions?: ((setIsOpen: React.Dispatch<React.SetStateAction<boolean>>) => React.ReactNode) | React.ReactNode;
 }> = ({ children, className, label, actions, direction = "left" }) => {
   const { isOpen, setIsOpen, dropdownRef } = useDropdownContext();
   return (
@@ -49,17 +49,17 @@ export const DropdownContent: React.FC<{
             <div className="text-sm font-bold px-3 py-2 border-b border-default-border flex justify-between items-center">
               {label}
               <button
-                className="text-neutral-500 hover:text-neutral-900"
+                className="text-neutral-500 hover:text-neutral-900 dark:hover:text-accent"
                 onClick={() => setIsOpen((p: boolean) => !p)}
               >
                 <CloseIcon />
               </button>
             </div>
           )}
-          <ul className={cn("overflow-hidden p-1.5")}>{children}</ul>
+          <ul className={cn("overflow-hidden p-1.5")}>{typeof children === "function" ? children(setIsOpen) : children}</ul>
           {!!actions && (
             <div className="flex items-center justify-end gap-2.5 p-2 border-t border-default-border">
-              {actions}
+              {typeof actions === "function" ? actions(setIsOpen) : actions}
             </div>
           )}
         </motion.div>

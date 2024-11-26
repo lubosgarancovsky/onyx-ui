@@ -470,9 +470,9 @@ video {
   --accent: 213deg 94% 48%;
   --accent-light: 213deg 88% 51%;
   --accent-dark: 213deg 93% 43%;
-  --default: 215deg 17% 22%;
-  --default-light: 215deg 16% 25%;
-  --default-border: 215deg 15% 28%;
+  --default: 215deg 17% 19%;
+  --default-light: 215deg 17% 22%;
+  --default-border: 215deg 15% 26%;
   --danger: 359deg 73% 56%;
   --foreground: 216deg 19% 85%;
   --foreground-100: 216deg 17% 70%;
@@ -982,6 +982,10 @@ html {
   background-color: hsl(var(--accent-dark) / var(--tw-bg-opacity));
 }
 
+.bg-accent\/20 {
+  background-color: hsl(var(--accent) / 0.2);
+}
+
 .bg-background {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--background) / var(--tw-bg-opacity));
@@ -1019,10 +1023,6 @@ html {
   background-color: hsl(var(--default-light) / 0.5);
 }
 
-.bg-default-light\/80 {
-  background-color: hsl(var(--default-light) / 0.8);
-}
-
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--primary) / var(--tw-bg-opacity));
@@ -1030,10 +1030,6 @@ html {
 
 .bg-primary\/10 {
   background-color: hsl(var(--primary) / 0.1);
-}
-
-.bg-primary\/20 {
-  background-color: hsl(var(--primary) / 0.2);
 }
 
 .bg-transparent {
@@ -1155,6 +1151,11 @@ html {
 .\!text-danger {
   --tw-text-opacity: 1 !important;
   color: hsl(var(--danger) / var(--tw-text-opacity)) !important;
+}
+
+.text-accent {
+  --tw-text-opacity: 1;
+  color: hsl(var(--accent) / var(--tw-text-opacity));
 }
 
 .text-danger {
@@ -1370,6 +1371,16 @@ div[data-focused="true"] {
   background-color: transparent;
 }
 
+.hover\:bg-default:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--default) / var(--tw-bg-opacity));
+}
+
+.hover\:text-accent:hover {
+  --tw-text-opacity: 1;
+  color: hsl(var(--accent) / var(--tw-text-opacity));
+}
+
 .hover\:text-danger:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--danger) / var(--tw-text-opacity));
@@ -1413,6 +1424,11 @@ div[data-focused="true"] {
   background-color: hsl(var(--default-light) / var(--tw-bg-opacity));
 }
 
+.focus-visible\:bg-default:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--default) / var(--tw-bg-opacity));
+}
+
 .focus-visible\:\!outline-none:focus-visible {
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
@@ -1421,6 +1437,13 @@ div[data-focused="true"] {
 @media (min-width: 768px) {
   .md\:max-w-\[36rem\] {
     max-width: 36rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:hover\:text-accent:hover {
+    --tw-text-opacity: 1;
+    color: hsl(var(--accent) / var(--tw-text-opacity));
   }
 }
 

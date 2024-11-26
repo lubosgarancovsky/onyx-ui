@@ -100,12 +100,12 @@ export const WithActions: Story = {
           label="Actions"
           className="min-w-[24rem]"
           actions={
-            <>
-              <Button size="sm">Reset to default</Button>
-              <Button color="primary" size="sm">
-                Save
-              </Button>
-            </>
+              (setIsOpen) => (<>
+                  <Button size="sm">Reset to default</Button>
+                  <Button onClick={() => setIsOpen(false)} color="primary" size="sm">
+                      Save
+                  </Button>
+              </>)
           }
         >
           <DropdownItem icon={<PlaceholderIcon />}>New file</DropdownItem>

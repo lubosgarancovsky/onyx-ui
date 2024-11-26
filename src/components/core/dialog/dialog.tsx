@@ -27,10 +27,11 @@ export const DialogTrigger: React.FC<DialogTriggerProps> = ({ children }) => {
 };
 
 export const DialogContent: React.FC<{
-  children: React.ReactNode;
+  children: ((setIsOpen: React.Dispatch<React.SetStateAction<boolean>>) => React.ReactNode) | React.ReactNode;
   className?: string;
 }> = ({ children, className }) => {
-  return <div className={cn("mt-4", className)}>{children}</div>;
+  const { setIsOpen } = useDialogContext();
+  return <div className={cn("mt-4", className)}>{typeof children === "function" ? children(setIsOpen) : children}</div>;
 };
 
 export const DialogBody: React.FC<{ children: React.ReactNode }> = ({

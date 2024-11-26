@@ -42,7 +42,7 @@ function useDrawer(props: UseDrawerProps) {
   const getBackdropProps = useCallback(
     (props = {}) => ({
       className: cn(
-        "fixed top-0 left-0 w-full h-full bg-default-light/80",
+        "fixed top-0 left-0 w-full h-full bg-black/20",
         backdropClassName
       ),
       ...props,

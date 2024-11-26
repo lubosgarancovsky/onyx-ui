@@ -26,7 +26,7 @@ function useDropdownItem(props: UseDropdownItemProps) {
   const style = useMemo(
     () =>
       cn(
-        "focusable px-3 py-1.5 hover:bg-default-light focus-visible:bg-default-light text-left duration-150 rounded-md transition-colors w-full flex items-center gap-2",
+        "focusable px-3 py-1.5 hover:bg-default focus-visible:bg-default text-left duration-150 rounded-md transition-colors w-full flex items-center gap-2",
         {
           "text-danger hover:text-white hover:bg-danger": variant === "danger",
           "opacity-70 cursor-not-allowed pointer-events-none": isDisabled,

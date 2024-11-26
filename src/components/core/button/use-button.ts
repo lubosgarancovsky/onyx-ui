@@ -67,7 +67,7 @@ function useButton(props: UseButtonProps) {
       {
         "bg-primary border-primary-dark hover:bg-primary-dark text-white":
           color === "primary",
-        "bg-default border-default-border hover:bg-default-light":
+        "bg-default border-default-border hover:bg-default":
           color === "default",
         "bg-default border-default-border hover:bg-danger text-danger hover:text-white":
           color === "danger",
@@ -92,6 +92,7 @@ function useButton(props: UseButtonProps) {
           color === "primary" && variant === "outline",
         "border-danger !text-danger hover:bg-danger/10":
           color === "danger" && variant === "outline",
+        "hover:bg-default-light": color === "default" && variant === "default",
       },
       {
         "opacity-70 cursor-not-allowed pointer-events-none": isDisabled,

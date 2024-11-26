@@ -25,7 +25,7 @@ const useBadge = (props: UseBadgeProps) => {
     () =>
       cn(
         "text-sm px-3 py-0.5 bg-default-light font-[500]",
-        { "bg-primary/20 text-primary": variant === "primary" },
+        { "bg-accent/20 text-accent": variant === "primary" },
         {
           "bg-transparent border border-default-border": variant === "outline",
         },
