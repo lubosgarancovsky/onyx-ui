@@ -772,6 +772,10 @@ html {
   height: 100vh;
 }
 
+.h-\[1\.15em\] {
+  height: 1.15em;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -802,6 +806,11 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .min-w-80 {
@@ -1114,8 +1123,17 @@ html {
   padding-bottom: 0.37rem;
 }
 
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
 .text-left {
   text-align: left;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-sm {
@@ -1353,6 +1371,11 @@ div[data-focused="true"] {
   background-color: hsl(var(--danger) / 0.1);
 }
 
+.hover\:bg-default:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--default) / var(--tw-bg-opacity));
+}
+
 .hover\:bg-default-light:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--default-light) / var(--tw-bg-opacity));
@@ -1369,11 +1392,6 @@ div[data-focused="true"] {
 
 .hover\:bg-transparent:hover {
   background-color: transparent;
-}
-
-.hover\:bg-default:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--default) / var(--tw-bg-opacity));
 }
 
 .hover\:text-accent:hover {
@@ -1419,14 +1437,14 @@ div[data-focused="true"] {
   outline-offset: 2px;
 }
 
-.focus-visible\:bg-default-light:focus-visible {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--default-light) / var(--tw-bg-opacity));
-}
-
 .focus-visible\:bg-default:focus-visible {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--default) / var(--tw-bg-opacity));
+}
+
+.focus-visible\:bg-default-light:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--default-light) / var(--tw-bg-opacity));
 }
 
 .focus-visible\:\!outline-none:focus-visible {

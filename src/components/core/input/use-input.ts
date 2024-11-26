@@ -58,7 +58,7 @@ function useInput(props: UseInputProps) {
 
   const style = useMemo(() => {
     return cn(
-      "p-0 m-0 h-[1em] focus-visible:!outline-none focus:!outline-none bg-transparent w-full",
+      "p-0 m-0 h-[1.15em] focus-visible:!outline-none focus:!outline-none bg-transparent w-full",
       { "pointer-events-none": isDisabled },
       className
     );

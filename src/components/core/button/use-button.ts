@@ -53,7 +53,7 @@ function useButton(props: UseButtonProps) {
 
   const style = useMemo(() => {
     return cn(
-      "focusable flex items-center font-medium border h-fit rounded-md leading-none whitespace-nowrap relative",
+      "focusable flex items-center font-medium border h-fit rounded-md leading-none whitespace-nowrap relative w-fit text-center justify-center",
       {
         "gap-1.5 px-3 py-1.5 text-sm": size === "sm",
         "gap-2 px-4 py-2.5": size === "md",
