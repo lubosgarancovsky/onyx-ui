@@ -1,6 +1,6 @@
 {
   "name": "@lubosgarancovsky/onyx-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React UI library",
   "main": "dist/index.js",
   "files": [
