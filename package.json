@@ -14,7 +14,8 @@
     "build-storybook": "storybook build",
     "type-check": "tsc --pretty --noEmit",
     "test-all": "npm run type-check && npm run test",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs",
+    "deploy": "npm run rollup && npm publish"
   },
   "author": "Ľuboš Garančovský",
   "license": "ISC",
@@ -69,5 +70,8 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.5.4",
     "rollup-plugin-copy": "^3.5.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
