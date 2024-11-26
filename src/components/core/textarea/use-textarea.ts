@@ -31,7 +31,9 @@ function useTextarea(props: UseTextareaProps) {
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
-  const id = idProp || useId();
+  const useid = useId();
+  const id = idProp || useid;
+
   const Component = as || "textarea";
   const showAsterix = !hideAsterix && !!label && textAreaProps.required;
 

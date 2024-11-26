@@ -53,8 +53,9 @@ function useSelect(props: UseSelectProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [value, setValue] = useState<any>(null);
 
-  const selectRef = useRef<HTMLSelectElement>(null);
-  const id = idProp || useId();
+  const selectRef = useRef<HTMLSelectElement | null>(null);
+  const useid = useId();
+  const id = idProp || useid;
 
   useClickOutside(selectRef, () => {
     if (isOpen) setIsOpen(false);

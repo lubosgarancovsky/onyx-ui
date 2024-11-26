@@ -45,7 +45,8 @@ function useCheckbox(props: UseCheckboxProps) {
     }
   }, [isCheckedProp]);
 
-  const id = idProp || useId();
+  const useid = useId();
+  const id = idProp || useid;
 
   const handleFocus = () => {
     const checkbtn = checkbuttonRef.current;

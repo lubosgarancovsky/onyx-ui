@@ -42,7 +42,8 @@ function useSwitch(props: UseSwitchProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const ref = mergeRefs([inputRef, forwardedRef]);
 
-  const id = idProp || useId();
+  const useid = useId();
+  const id = idProp || useid;
 
   const [isChecked, setIsChecked] = useState<boolean>(!!initiallyChecked);
 

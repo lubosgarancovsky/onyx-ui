@@ -63,7 +63,8 @@ function useTagInput(props: UseTagInputProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-  const id = idProp || useId();
+  const useid = useId();
+  const id = idProp || useid;
 
   const Component = as || "input";
 
